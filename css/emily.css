@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Roboto:wght@300;400;500&display=swap');
+
+
+@font-face {
+    font-family: 'Yadon Bold';
+    src: url('../css/fonts/Yadon-Bold.woff2') format('woff2'),
+        url('../css/fonts/Yadon-Bold.woff') format('woff'),
+        url("../css/fonts/Yadon-Bold.otf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Yadon Black';
+    src: url('../css/fonts/Yadon-Black.woff2') format('woff2'),
+        url('../css/fonts/Yadon-Black.woff') format('woff'),
+        url("../css/fonts/Yadon-Black.otf") format("opentype");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'Yadon Medium';
+    src: url('../css/fonts/Yadon-Medium.woff2') format('woff2'),
+        url('../css/fonts/Yadon-Medium.woff') format('woff'),
+        url("../css/fonts/Yadon-Medium.otf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+:root {
+    --text-primary: rgb(0, 0, 0);
+    --text-light-gray: #333333;
+    --bg-color-light : #fff ;
+
+    --text-white: (255, 255, 255);
+    --text-gray: #c4c4c4;
+    --bg-color-dark: #000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    word-spacing: 1px;
+    line-height: 1.5;
+    background: var(--bg-color-white);
+}
+
+
+a,
+header a i {
+    font-family: "Roboto", sans-serif;
+    color: var(--text-light-gray);
+    display: inline-block;
+
+    text-decoration: none;
+    letter-spacing: 1px;
+    opacity: 0.7;
+    transition: all 300ms ease-in-out;
+}
+
+p {
+    color: var(--text-light-gray);
+    font-size: 13px;
+    word-spacing: 1px;
+    letter-spacing: 0.6px;
+    font-weight: 400;
+}
+
+/* UTILITIES */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    justify-content: center;
+}
+
+.current {
+    color: var(--text-primary);
+    opacity: 1;
+}
+
+.subtitle {
+    color: var(--text-primary);
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+/* STYLING */
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    text-align: right;
+    position: sticky;
+    top:0;
+    padding-right: 6rem;
+    letter-spacing: 2px;
+}
+
+.logo {
+    font-family: 'Yadon Medium';
+    color: var(--text-primary);
+    font-size: 2rem;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    opacity: 1;
+    display: inline-block;
+}
+
+header a {
+    width: fit-content;
+    margin-left: auto;
+}
+
+nav ul {
+    display: inline-block;
+    list-style: none;
+    margin: 4rem 0;
+}
+
+nav ul li a {
+    font-family: 'Yadon Black';
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 3px;
+}
+
+nav ul:hover li a:not(:hover):not(.current){
+    filter: blur(1.5px);
+}
+
+header a:hover,
+#pages a:hover {
+    color: var(--text-primary);
+    opacity: 1;
+}
+
+header .instagram-QR {
+    width: 90px;
+    display: block;
+    margin-left: auto;
+    visibility: hidden;
+    transition: all 200ms ease-in-out;
+}
+
+
+header a i:hover + .instagram-QR {
+    visibility: visible;
+}
+
+header .footer {
+    font-size: 0.7rem;
+}
+
+
+/* MAIN */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* IMAGES */
+#images img {
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+    margin: 3.3rem 0;
+    border-radius: 6px;
+    box-shadow: 0 0 15px rgba(136, 136, 136, 0.5);
+}
+
+
+/* PAGES */
+#pages a {
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 1.1rem;
+    opacity: 0.6;
+
+    padding: 0.5rem;
+    transition: all 200ms ease-in-out;
+}
+
+#pages a.current {
+    opacity: 1;
+}
+
+/* INFOS */
+main #infos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+
+    padding: 2rem 0 3.3rem;
+    border-top: 1px solid var(--text-primary);
+}
+
+
+
