@@ -34,11 +34,11 @@
 
 
 :root {
-    --text-primary: rgb(0, 0, 0);
-    --text-light-gray: #333333;
+    --text-primary: #1B1C1E;
+    --text-light-gray: #303030;
     --bg-color-light : #fff ;
 
-    --text-white: (255, 255, 255);
+    --text-white: #fff;
     --text-gray: #c4c4c4;
     --bg-color-dark: #000;
 }
@@ -53,9 +53,8 @@ body {
     font-family: "Lato", sans-serif;
     word-spacing: 1px;
     line-height: 1.5;
-    background: var(--bg-color-white);
+    background: var(--bg-color-light);
 }
-
 
 a,
 header a i {
@@ -93,10 +92,10 @@ p {
 }
 
 .subtitle {
-    color: var(--text-primary);
+    color: var(--text-light-gray);
     font-size: 1rem;
     letter-spacing: 1px;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.2rem;
 }
 
 /* STYLING */
@@ -108,14 +107,15 @@ header {
     text-align: right;
     position: sticky;
     top:0;
-    padding-right: 6rem;
+    padding-right: 3rem;
     letter-spacing: 2px;
 }
 
 .logo {
-    font-family: 'Yadon Medium';
+    font-family: 'Yadon Bold';
     color: var(--text-primary);
-    font-size: 2rem;
+    font-size: 1.4rem;
+    margin-bottom: 3rem;
     letter-spacing: 2px;
     line-height: 1.2;
     opacity: 1;
@@ -130,41 +130,33 @@ header a {
 nav ul {
     display: inline-block;
     list-style: none;
-    margin: 4rem 0;
 }
 
 nav ul li a {
-    font-family: 'Yadon Black';
-    font-size: 1.4rem;
-    margin-bottom: 0.5rem;
+    font-family: 'Yadon Bold';
+    font-size: 1.2rem;
     letter-spacing: 3px;
 }
 
-nav ul:hover li a:not(:hover):not(.current){
-    filter: blur(1.5px);
-}
-
-header a:hover,
-#pages a:hover {
-    color: var(--text-primary);
+header a:hover {
     opacity: 1;
 }
 
 header .instagram-QR {
-    width: 90px;
+    width: 4rem;
     display: block;
     margin-left: auto;
     visibility: hidden;
     transition: all 200ms ease-in-out;
 }
 
-
 header a i:hover + .instagram-QR {
     visibility: visible;
 }
 
-header .footer {
-    font-size: 0.7rem;
+header .footer p{
+    font-size: 12px;
+    line-height: 1.2;
 }
 
 
@@ -173,6 +165,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 3rem 0 1.5rem;
 }
 
 /* IMAGES */
@@ -180,36 +173,163 @@ main {
     max-width: 100%;
     margin: 0 auto;
     display: block;
-    margin: 3.3rem 0;
-    border-radius: 6px;
-    box-shadow: 0 0 15px rgba(136, 136, 136, 0.5);
+    padding: 4rem 4rem 4rem 1rem;
 }
 
-
-/* PAGES */
-#pages a {
-    color: var(--text-primary);
-    font-weight: 500;
-    font-size: 1.1rem;
-    opacity: 0.6;
-
-    padding: 0.5rem;
-    transition: all 200ms ease-in-out;
-}
-
-#pages a.current {
-    opacity: 1;
-}
 
 /* INFOS */
 main #infos {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: 1.5rem;
 
-    padding: 2rem 0 3.3rem;
-    border-top: 1px solid var(--text-primary);
+    padding-top: 3rem;
+    border-top: 1px solid var(--text-light-gray);
+}
+
+main #infos .infos-text {
+    display: flex;
+    gap: 1rem;
+}
+
+main #infos .infos-text .infos-category {
+    width: 20%;
+}
+
+main #infos .infos-text .infos-details {
+    flex-grow: 1;
+}
+
+/* FOOTER */
+footer {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .logo {
+        font-size: 1.4rem;
+    }
+
+    main {
+        padding: 1.5rem 0;
+    }
+
+    header .footer p {
+        font-size: 10px;
+    }
+
+    #images img {
+        padding: 1.5rem;
+    }
+
+    main #infos {
+        grid-template-columns: 1fr;
+        padding-top: 1.5rem;
+    }
+
 }
 
 
+@media (max-width: 600px) {
+    .container {
+        grid-template-columns: 1fr;
+        padding: 0 1.5rem;
+    }
 
+    header {
+        padding: 0;
+        height: auto;
+        /* background-color: #ff6f6f96; */
+        position: static;
+        border-bottom: 1px solid var(--text-light-gray);
+    }
+
+    .logo {
+        margin: 2rem auto 1.5rem;
+    }
+
+    nav ul {
+        text-align: center;
+        margin: auto;
+        width: 100%;
+        display: grid;
+        grid-template-areas: 
+        "home portfolio about contact";
+    }
+    
+    nav ul li a {
+        padding: 0.5rem 0;
+        font-size: 1rem;
+    }
+
+    nav ul li:nth-child(1) {
+        grid-area: home;
+    }
+
+    nav ul li:nth-child(2) {
+        grid-area: portfolio;
+    }
+
+    nav ul li:nth-child(3) {
+        grid-area: about;
+    }
+
+    nav ul li:nth-child(4) {
+        grid-area: contact;
+    }
+
+
+    header .instagram-QR, 
+    header .footer,
+    header a:nth-child(3) {
+        display: none;
+    }
+
+    #images img {
+        padding: 0;
+        margin-bottom: 1.5rem;
+    }
+
+    .subtitle {
+        font-size: 1.3rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    main #infos {
+        grid-template-columns: 1fr;
+        padding-top: 1rem;
+    }
+
+    main #infos .infos-text .infos-category {
+        width: 15%;
+    }
+
+    footer {
+        display: block;
+        background: var(--text-light-gray);;
+    }
+
+    footer .container {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem;
+    }
+
+    footer .container .footer-mobile-text p {
+        font-size: 0.6rem;
+        color: var(--text-white);
+    }
+
+    footer .container a i {
+        color: var(--text-white);
+    }
+
+    #images img {
+        border-radius: 3px;
+    }
+}
