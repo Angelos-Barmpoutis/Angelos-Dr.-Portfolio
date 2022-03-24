@@ -236,6 +236,14 @@ footer {
         padding: 0 1.5rem;
     }
 
+    .subtitle {
+        font-size: 1.3rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
     header {
         padding: 0;
         height: auto;
@@ -280,7 +288,6 @@ footer {
         grid-area: contact;
     }
 
-
     header .instagram-QR, 
     header .footer,
     header a:nth-child(3) {
@@ -290,14 +297,7 @@ footer {
     #images img {
         padding: 0;
         margin-bottom: 1.5rem;
-    }
-
-    .subtitle {
-        font-size: 1.3rem;
-    }
-
-    p {
-        font-size: 0.9rem;
+        border-radius: 3px;
     }
 
     main #infos {
@@ -306,7 +306,7 @@ footer {
     }
 
     main #infos .infos-text .infos-category {
-        width: 15%;
+        width: 19%;
     }
 
     footer {
@@ -331,7 +331,5 @@ footer {
         color: var(--text-white);
     }
 
-    #images img {
-        border-radius: 3px;
-    }
+    
 }
