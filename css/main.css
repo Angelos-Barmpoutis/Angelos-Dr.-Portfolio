@@ -255,11 +255,13 @@ footer {
         display: grid;
         grid-template-areas: 
         "home portfolio about contact";
+        gap: 1rem;
     }
     
     nav ul li a {
         padding: 0.5rem 0;
         font-size: 1rem;
+        letter-spacing: 1px;
     }
 
     nav ul li:nth-child(1) {
