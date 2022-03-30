@@ -31,13 +31,13 @@
 }
 
 :root {
-  --text-primary: #1b1c1e;
-  --text-light-gray: #303030;
-  --bg-color-light: #fff;
+  --text-black: #1b1c1e;
+  --text-light: rgba(48, 48, 48, 0.7);
+  --bg-white: #fff;
 
   --text-white: #fff;
-  --text-gray: #c4c4c4;
-  --bg-color-dark: #000;
+  --text-gray: rgba(196, 196, 196, 0.7);
+  --bg-black: #000;
 }
 
 * {
@@ -50,26 +50,23 @@ body {
   font-family: "Lato", sans-serif;
   word-spacing: 1px;
   line-height: 1.5;
-  background: var(--bg-color-light);
-  scroll-behavior: smooth;
+  background: var(--bg-white);
 }
 
 a,
 header a i {
   font-family: "Roboto", sans-serif;
-  color: var(--text-light-gray);
+  color: var(--text-light);
   display: inline-block;
 
   text-decoration: none;
   letter-spacing: 1px;
-  opacity: 0.7;
-  transition: all 300ms ease-in-out;
+  transition: all 200ms ease-in-out;
 }
 
 p {
-  color: var(--text-light-gray);
+  color: var(--text-light);
   font-size: 13px;
-  word-spacing: 1px;
   letter-spacing: 0.6px;
   font-weight: 400;
 }
@@ -85,12 +82,11 @@ p {
 }
 
 .current {
-  color: var(--text-primary);
-  opacity: 1;
+  color: var(--text-black);
 }
 
 .subtitle {
-  color: var(--text-light-gray);
+  color: var(--text-light);
   font-size: 1rem;
   letter-spacing: 1px;
   margin-bottom: 0.2rem;
@@ -111,12 +107,11 @@ header {
 
 .logo {
   font-family: "Yadon Bold";
-  color: var(--text-primary);
+  color: var(--text-black);
   font-size: 1.4rem;
   margin-bottom: 3rem;
   letter-spacing: 2px;
   line-height: 1.2;
-  opacity: 1;
   display: inline-block;
 }
 
@@ -140,37 +135,9 @@ nav ul .fa-solid {
   display: none;
 }
 
-/* .hamburger {
-  display: none;
-  position: relative;
-}
-
-.hamburger,
-.hamburger::before,
-.hamburger::after {
-  background-color: black;
-  width: 25px;
-  height: 2px;
-  transition: transform 200ms ease-in-out;
-}
-
-.hamburger::before,
-.hamburger::after {
-  content: "";
-  position: absolute;
-  left: 0;
-}
-
-.hamburger::before {
-  top: 8px;
-}
-
-.hamburger::after {
-  bottom: 8px;
-} */
-
-header a:hover {
-  opacity: 1;
+header a:hover,
+header a .fa-instagram:hover {
+  color: var(--text-black);
 }
 
 header .instagram-QR {
@@ -181,7 +148,7 @@ header .instagram-QR {
   transition: all 200ms ease-in-out;
 }
 
-header a i:hover + .instagram-QR {
+header a .fa-instagram:hover + .instagram-QR {
   visibility: visible;
 }
 
@@ -221,21 +188,7 @@ main {
   transform: scale(1.1);
 }
 
-/* .reveal{
-    transform: translateY(150px);
-    opacity: 0;
-    transition: all 700ms ease-out;
-  }
-  
-  .reveal.active{
-    transform: translateY(0);
-    opacity: 1;
-  } */
-
-/* FOOTER */
-footer {
-  display: none;
-}
+/* ANIMATIONS */
 
 @keyframes slideInFromLeft {
   to {
@@ -250,6 +203,8 @@ footer {
     transform: translateX(0);
   }
 }
+
+/* MEDIA QUERIES */
 
 @media (min-width: 769px) {
   .logo {
@@ -300,12 +255,16 @@ footer {
   }
 
   header .instagram-QR,
-  header a i:hover + .instagram-QR {
+  header a .fa-instagram:hover + .instagram-QR {
     visibility: hidden;
   }
 
+  header a .fa-instagram:hover {
+    color: var(--text-light);
+  }
+
   header a:hover:not(.current):not(.logo) {
-    opacity: 0.7;
+    color: var(--text-light);
   }
 
   header .footer p {
@@ -318,7 +277,6 @@ footer {
   }
 
   #images img {
-    width: 100%;
     border-radius: 3px;
   }
 
@@ -331,7 +289,7 @@ footer {
   .container {
     grid-template-columns: 1fr;
     padding: 0 1rem;
-    background-color: #000;
+    background-color: var(--bg-black);
   }
 
   main {
@@ -350,8 +308,15 @@ footer {
     padding: 0;
     height: auto;
     position: static;
-    display: flex;
-    flex-direction: row;
+  }
+
+  header ul li a,
+  header ul li a:hover {
+    color: var(--text-white);
+  }
+
+  header a:hover:not(.current):not(.logo) {
+    color: var(--text-white);
   }
 
   .logo {
@@ -359,9 +324,7 @@ footer {
     margin: 3rem auto 1.5rem;
     max-width: 10ch;
     text-align: center;
-    /* position: relative;
-    left: 25px; */
-    color: #fff;
+    color: var(--text-white);
   }
 
   nav ul {
@@ -369,16 +332,15 @@ footer {
     grid-template-columns: repeat(3, 1fr);
     align-items: flex-end;
     position: fixed;
-    bottom: 5px;
-    left: 5px;
-    right: 5px;
-    width: 93%;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     margin: 0 auto;
-    border-radius: 10px;
+    border-radius: 10px 10px 0 0;
     text-align: center;
     background-color: rgba(29, 29, 29, 0.918);
     padding: 2px;
-    z-index: 10;
+    z-index: 2;
   }
 
   /* .hamburger {
@@ -392,34 +354,29 @@ footer {
     justify-content: center;
     align-items: center;
     gap: 5px;
-    padding: 0.5rem 0;
+    padding: 0.5rem 1.5rem;
     font-size: 0.7rem;
     letter-spacing: 0;
     opacity: 1;
-    color: #fff;
     margin: auto;
     z-index: 1;
   }
 
+  nav ul .fa-solid,
   .current {
-    color: #fff;
-  }
-
-  nav ul .fa-solid {
     display: block;
-    color: #fff;
-    opacity: 1;
+    color: var(--text-white);
   }
 
   nav ul li:nth-child(1),
   nav ul li:nth-child(2) {
-    border-right: 1px solid var(--text-light-gray);
+    border-right: 1px solid var(--text-light);
   }
 
   nav ul li a:hover,
   nav ul li a i:hover {
     opacity: 1;
-    color: #fff;
+    color: var(--text-white);
   }
 
   header .instagram-QR,
@@ -439,27 +396,5 @@ footer {
 
   #images .zoom-on-hover:hover img {
     transform: scale(1);
-  }
-
-  footer {
-    display: none;
-    background: rgba(224, 240, 255, 0.527);
-  }
-
-  footer .container {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem;
-  }
-
-  footer .container .footer-mobile-text p {
-    font-size: 0.6rem;
-    color: var(--text-primary);
-  }
-
-  footer .container a i {
-    color: var(--text-primary);
   }
 }
