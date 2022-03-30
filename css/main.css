@@ -51,6 +51,7 @@ body {
   word-spacing: 1px;
   line-height: 1.5;
   background: var(--bg-color-light);
+  scroll-behavior: smooth;
 }
 
 a,
@@ -135,6 +136,39 @@ nav ul li a {
   letter-spacing: 3px;
 }
 
+nav ul .fa-solid {
+  display: none;
+}
+
+/* .hamburger {
+  display: none;
+  position: relative;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  background-color: black;
+  width: 25px;
+  height: 2px;
+  transition: transform 200ms ease-in-out;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.hamburger::before {
+  top: 8px;
+}
+
+.hamburger::after {
+  bottom: 8px;
+} */
+
 header a:hover {
   opacity: 1;
 }
@@ -218,20 +252,44 @@ footer {
 }
 
 @media (min-width: 769px) {
-  header {
-    transform: translateX(-200px);
+  .logo {
+    transform: translateX(-100px);
     opacity: 0;
-    animation: slideInFromLeft 750ms ease-in-out forwards;
-    -moz-animation: slideInFromLeft 750ms ease-in-out forwards;
-    -webkit-animation: slideInFromLeft 750ms ease-in-out forwards;
+    animation: slideInFromLeft 500ms ease-in-out forwards;
+    -moz-animation: slideInFromLeft 500ms ease-in-out forwards;
+    -webkit-animation: slideInFromLeft 500ms ease-in-out forwards;
+  }
+
+  nav {
+    transform: translateX(-100px);
+    opacity: 0;
+    animation: slideInFromLeft 500ms ease-in-out 500ms forwards;
+    -moz-animation: slideInFromLeft 500ms ease-in-out 500ms forwards;
+    -webkit-animation: slideInFromLeft 500ms ease-in-out 500ms forwards;
+  }
+
+  header > a {
+    transform: translateX(-100px);
+    opacity: 0;
+    animation: slideInFromLeft 500ms ease-in-out 1s forwards;
+    -moz-animation: slideInFromLeft 500ms ease-in-out 1s forwards;
+    -webkit-animation: slideInFromLeft 500ms ease-in-out 1s forwards;
+  }
+
+  header .footer {
+    transform: translateX(-100px);
+    opacity: 0;
+    animation: slideInFromLeft 500ms ease-in-out 1.6s forwards;
+    -moz-animation: slideInFromLeft 500ms ease-in-out 1.6s forwards;
+    -webkit-animation: slideInFromLeft 500ms ease-in-out 1.6s forwards;
   }
 
   main {
-    transform: translateX(200px);
+    transform: translateX(100px);
     opacity: 0;
-    animation: slideInFromRight 750ms ease-in-out 850ms forwards;
-    -moz-animation: slideInFromRight 750ms ease-in-out 850ms forwards;
-    -webkit-animation: slideInFromRight 750ms ease-in-out 850ms forwards;
+    animation: slideInFromRight 500ms ease-in-out 2s forwards;
+    -moz-animation: slideInFromRight 500ms ease-in-out 2s forwards;
+    -webkit-animation: slideInFromRight 500ms ease-in-out 2s forwards;
   }
 }
 
@@ -273,10 +331,11 @@ footer {
   .container {
     grid-template-columns: 1fr;
     padding: 0 1rem;
+    background-color: #000;
   }
 
   main {
-    padding: 1.5rem 0;
+    padding: 1.5rem 0 5.5rem;
   }
 
   .subtitle {
@@ -291,6 +350,8 @@ footer {
     padding: 0;
     height: auto;
     position: static;
+    display: flex;
+    flex-direction: row;
   }
 
   .logo {
@@ -298,20 +359,67 @@ footer {
     margin: 3rem auto 1.5rem;
     max-width: 10ch;
     text-align: center;
+    /* position: relative;
+    left: 25px; */
+    color: #fff;
   }
 
   nav ul {
-    display: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: flex-end;
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    width: 93%;
+    margin: 0 auto;
+    border-radius: 10px;
+    text-align: center;
+    background-color: rgba(29, 29, 29, 0.918);
+    padding: 2px;
+    z-index: 10;
   }
+
+  /* .hamburger {
+    display: block;
+    top: 1.5rem;
+  } */
 
   nav ul li a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
     padding: 0.5rem 0;
-    font-size: 1rem;
-    letter-spacing: 1px;
+    font-size: 0.7rem;
+    letter-spacing: 0;
+    opacity: 1;
+    color: #fff;
+    margin: auto;
+    z-index: 1;
   }
 
-  nav ul li a:hover {
-    opacity: 0.7;
+  .current {
+    color: #fff;
+  }
+
+  nav ul .fa-solid {
+    display: block;
+    color: #fff;
+    opacity: 1;
+  }
+
+  nav ul li:nth-child(1),
+  nav ul li:nth-child(2) {
+    border-right: 1px solid var(--text-light-gray);
+  }
+
+  nav ul li a:hover,
+  nav ul li a i:hover {
+    opacity: 1;
+    color: #fff;
   }
 
   header .instagram-QR,
@@ -334,7 +442,7 @@ footer {
   }
 
   footer {
-    display: block;
+    display: none;
     background: rgba(224, 240, 255, 0.527);
   }
 
