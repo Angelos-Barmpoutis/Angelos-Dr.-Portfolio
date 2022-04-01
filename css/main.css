@@ -198,7 +198,7 @@ header .footer p {
 
 /* MEDIA QUERIES */
 
-/* @media (min-width: 769px) {
+@media (min-width: 769px) {
   .logo {
     transform: translateX(-200px);
     opacity: 0;
@@ -238,7 +238,7 @@ header .footer p {
     -moz-animation: slideInFromRight 500ms ease-in-out 2s forwards;
     -webkit-animation: slideInFromRight 500ms ease-in-out 2s forwards;
   }
-} */
+}
 
 @media (max-width: 768px) {
   header nav ul li a:hover,
@@ -377,7 +377,7 @@ header .footer p {
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.904);
-    height: 350px;
+    height: 100%;
     width: 100%;
     z-index: 1;
     overflow: hidden;
@@ -389,7 +389,7 @@ header .footer p {
   header nav ul li a {
     border-bottom: 1px solid var(--text-light);
     padding: 1rem 0.5rem;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     width: 180px;
     text-align: center;
   }

@@ -28,10 +28,8 @@ function hamburgerToggle() {
 
   if (menu.classList.contains('visible')) {
     hamburger.style.position = "fixed";
-    document.querySelector("header").style.paddingTop = "300px";
   } else
    {hamburger.style.position = "absolute";
-   document.querySelector("header").style.paddingTop = "1.5rem";
   }
 }
   
