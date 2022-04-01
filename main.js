@@ -28,8 +28,10 @@ function hamburgerToggle() {
 
   if (menu.classList.contains('visible')) {
     hamburger.style.position = "fixed";
+    document.querySelector('body').style.overflowY = 'hidden'
   } else
    {hamburger.style.position = "absolute";
+   document.querySelector('body').style.overflowY = 'scroll'
   }
 }
   

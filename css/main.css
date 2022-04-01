@@ -377,13 +377,14 @@ header .footer p {
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.904);
-    height: 100%;
+    height: 100vh;
     width: 100%;
     z-index: 1;
     overflow: hidden;
     transform: translateY(-100%);
     opacity: 0;
     transition: all 0.2s ease-in-out;
+    overflow: hidden;
   }
 
   header nav ul li a {
