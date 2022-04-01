@@ -85,23 +85,23 @@ p {
   margin-bottom: 0.2rem;
 }
 
-.text-black {
+/* STYLING */
+header .logo,
+.current {
   color: var(--text-black);
 }
 
-.text-white {
-  color: var(--text-white);
-}
-
-.text-light {
+header nav ul li a,
+header a .fa-instagram,
+header .footer p {
   color: var(--text-light);
 }
 
-.text-gray {
-  color: var(--text-gray);
+header nav ul li a:hover,
+header a .fa-instagram:hover {
+  color: var(--text-black);
 }
 
-/* STYLING */
 header {
   display: flex;
   flex-direction: column;
@@ -138,11 +138,6 @@ nav ul li a {
   line-height: 1.5;
   letter-spacing: 3px;
 }
-
-/* header a:hover,
-header a .fa-instagram:hover {
-  color: var(--text-black);
-} */
 
 header .instagram-QR {
   width: 4rem;
@@ -246,6 +241,15 @@ header .footer p {
 } */
 
 @media (max-width: 768px) {
+  header nav ul li a:hover,
+  header a .fa-instagram:hover {
+    color: var(--text-light);
+  }
+
+  .current:hover {
+    color: var(--text-black);
+  }
+
   .container {
     grid-template-columns: 1fr 2.5fr;
     padding: 0 2rem;
@@ -255,14 +259,6 @@ header .footer p {
   header a .fa-instagram:hover + .instagram-QR {
     visibility: hidden;
   }
-
-  /* header a .fa-instagram:hover {
-    color: var(--text-light);
-  } */
-  /* 
-  header a:hover:not(.current):not(.logo) {
-    color: var(--text-light);
-  } */
 
   header .footer p {
     font-size: 10px;
@@ -283,6 +279,14 @@ header .footer p {
 }
 
 @media (max-width: 600px) {
+  header nav ul li a,
+  header .logo,
+  .current,
+  header nav ul li a:hover,
+  .current:hover {
+    color: var(--text-white);
+  }
+
   .container {
     grid-template-columns: 1fr;
     padding: 0 1rem;
@@ -318,22 +322,13 @@ header .footer p {
     transition: all 0.2s ease-in-out;
   }
 
-  header nav ul li a,
-  header nav ul li a:hover {
-    color: var(--text-white) !important;
-  }
-
-  /* header a:hover:not(.current):not(.logo) {
-    color: var(--text-white);
-  } */
-
   .logo {
     font-size: 1.3rem;
     margin: 3rem auto 1.5rem;
     max-width: 10ch;
     text-align: center;
-    color: var(--text-white) !important;
   }
+
   .hamburger {
     cursor: pointer;
     width: fit-content;
@@ -381,7 +376,7 @@ header .footer p {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgba(15, 15, 15, 0.96);
+    background-color: var(--bg-black);
     height: 350px;
     width: 100%;
     z-index: 1;
