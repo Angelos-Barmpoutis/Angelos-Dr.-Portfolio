@@ -55,7 +55,6 @@ body {
 a,
 header a i {
   font-family: "Roboto", sans-serif;
-  color: var(--text-light);
   display: inline-block;
 
   text-decoration: none;
@@ -64,7 +63,6 @@ header a i {
 }
 
 p {
-  color: var(--text-light);
   font-family: "Lato", sans-serif;
   letter-spacing: 0.6px;
   font-weight: 400;
@@ -80,16 +78,27 @@ p {
   justify-content: center;
 }
 
-.current {
-  color: var(--text-black);
-}
-
 .subtitle {
   font-family: "Yadon Bold";
-  color: var(--text-black);
   font-size: 2.3rem;
   letter-spacing: 1px;
   margin-bottom: 0.2rem;
+}
+
+.text-black {
+  color: var(--text-black);
+}
+
+.text-white {
+  color: var(--text-white);
+}
+
+.text-light {
+  color: var(--text-light);
+}
+
+.text-gray {
+  color: var(--text-gray);
 }
 
 /* STYLING */
@@ -107,7 +116,6 @@ header {
 
 .logo {
   font-family: "Yadon Bold";
-  color: var(--text-black);
   font-size: 1.4rem;
   margin-bottom: 3rem;
   letter-spacing: 2px;
@@ -116,45 +124,7 @@ header {
 }
 
 header a {
-  width: fit-content;
   margin-left: auto;
-}
-
-.hamburger {
-  cursor: pointer;
-  width: fit-content;
-  padding: 5px;
-  position: absolute;
-  right: 1rem;
-  display: none;
-}
-
-.bar1,
-.bar2,
-.bar3 {
-  width: 30px;
-  height: 1.5px;
-  background-color: var(--text-white);
-  margin-bottom: 8px;
-  transition: all 0.4s ease-out;
-}
-
-.bar3 {
-  margin: 0;
-}
-
-.change .bar1 {
-  -webkit-transform: rotate(-45deg) translate(-8px, 5px);
-  transform: rotate(-45deg) translate(-8px, 5px);
-}
-
-.change .bar2 {
-  opacity: 0;
-}
-
-.change .bar3 {
-  -webkit-transform: rotate(45deg) translate(-8px, -6px);
-  transform: rotate(45deg) translate(-8px, -6px);
 }
 
 nav ul {
@@ -169,10 +139,10 @@ nav ul li a {
   letter-spacing: 3px;
 }
 
-header a:hover,
+/* header a:hover,
 header a .fa-instagram:hover {
   color: var(--text-black);
-}
+} */
 
 header .instagram-QR {
   width: 4rem;
@@ -213,35 +183,6 @@ header .footer p {
 
 #images .zoom-on-hover:hover img {
   transform: scale(1.1);
-}
-
-/* ABOUT */
-
-main #about {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-main #about .card {
-  padding: 2rem;
-  width: 100%;
-  margin: auto;
-  box-shadow: 0 0 10px rgb(73, 73, 73);
-}
-
-main #about .card img {
-  width: 300px;
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-main #about .about-content {
-  max-width: 700px;
-  margin: 0 auto;
-  text-align: center;
 }
 
 /* ANIMATIONS */
@@ -315,13 +256,13 @@ main #about .about-content {
     visibility: hidden;
   }
 
-  header a .fa-instagram:hover {
+  /* header a .fa-instagram:hover {
     color: var(--text-light);
-  }
-
+  } */
+  /* 
   header a:hover:not(.current):not(.logo) {
     color: var(--text-light);
-  }
+  } */
 
   header .footer p {
     font-size: 10px;
@@ -349,7 +290,7 @@ main #about .about-content {
   }
 
   main #images {
-    padding: 1.5rem 0 5.5rem;
+    padding: 1.5rem 0;
     grid-template-columns: repeat(2, 1fr);
     gap: 0.75rem;
   }
@@ -374,12 +315,12 @@ main #about .about-content {
     padding: 0;
     height: auto;
     position: static;
+    transition: all 0.2s ease-in-out;
   }
 
-  header ul li a,
-  header a:hover,
-  header ul li a:hover {
-    color: var(--text-white);
+  header nav ul li a,
+  header nav ul li a:hover {
+    color: var(--text-white) !important;
   }
 
   /* header a:hover:not(.current):not(.logo) {
@@ -391,16 +332,76 @@ main #about .about-content {
     margin: 3rem auto 1.5rem;
     max-width: 10ch;
     text-align: center;
-    color: var(--text-white);
+    color: var(--text-white) !important;
+  }
+  .hamburger {
+    cursor: pointer;
+    width: fit-content;
+    padding: 5px;
+    position: absolute;
+    right: 1rem;
+    display: block;
+    top: 1rem;
+    z-index: 2;
+  }
+
+  .bar1,
+  .bar2,
+  .bar3 {
+    width: 30px;
+    height: 1.5px;
+    background-color: var(--text-white);
+    margin-bottom: 8px;
+    transition: all 0.2s ease-out;
+  }
+
+  .bar3 {
+    margin: 0;
+  }
+
+  .change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-8px, 5px);
+    transform: rotate(-45deg) translate(-8px, 5px);
+  }
+
+  .change .bar2 {
+    opacity: 0;
+  }
+
+  .change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -6px);
+    transform: rotate(45deg) translate(-8px, -6px);
   }
 
   nav ul {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(15, 15, 15, 0.96);
+    height: 350px;
+    width: 100%;
+    z-index: 1;
+    overflow: hidden;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
   }
 
-  .hamburger {
-    display: block;
-    top: 1rem;
+  header nav ul li a {
+    border-bottom: 1px solid var(--text-light);
+    padding: 1rem 0.5rem;
+    font-size: 1.4rem;
+    width: 180px;
+    text-align: center;
+  }
+
+  .visible {
+    transform: translateY(0);
+    opacity: 1;
   }
 
   header .instagram-QR,

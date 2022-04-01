@@ -17,9 +17,21 @@
 //   window.addEventListener("scroll", reveal);
 
 const hamburger = document.querySelector('.hamburger');
+const menu = document.querySelector('ul');
+
 hamburger.addEventListener('click', hamburgerToggle);
+
 
 function hamburgerToggle() {
   hamburger.classList.toggle("change");
+  menu.classList.toggle('visible');
+
+  if (menu.classList.contains('visible')) {
+    hamburger.style.position = "fixed";
+    document.querySelector("header").style.paddingTop = "350px";
+  } else
+   {hamburger.style.position = "absolute";
+   document.querySelector("header").style.paddingTop = "1.5rem";
+  }
 }
   
