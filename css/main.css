@@ -3,31 +3,11 @@
 @font-face {
   font-family: "Yadon Bold";
   src: url("../css/fonts/Yadon-Bold.woff2") format("woff2"),
-    url("../css/fonts/Yadon-Bold.woff") format("woff"),
-    url("../css/fonts/Yadon-Bold.otf") format("opentype");
+    url("../css/fonts/Yadon-Bold.woff") format("woff");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
-}
-
-@font-face {
-  font-family: "Yadon Black";
-  src: url("../css/fonts/Yadon-Black.woff2") format("woff2"),
-    url("../css/fonts/Yadon-Black.woff") format("woff"),
-    url("../css/fonts/Yadon-Black.otf") format("opentype");
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Yadon Medium";
-  src: url("../css/fonts/Yadon-Medium.woff2") format("woff2"),
-    url("../css/fonts/Yadon-Medium.woff") format("woff"),
-    url("../css/fonts/Yadon-Medium.otf") format("opentype");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
+  unicode-range: U+000-5FF;
 }
 
 :root {
@@ -54,9 +34,7 @@ body {
 
 a,
 header a i {
-  font-family: "Roboto", sans-serif;
   display: inline-block;
-
   text-decoration: none;
   letter-spacing: 1px;
   transition: all 200ms ease-in-out;
@@ -80,6 +58,7 @@ p {
 
 .subtitle {
   font-family: "Yadon Bold";
+  font-weight: 500;
   font-size: 2.3rem;
   letter-spacing: 1px;
   margin-bottom: 0.2rem;
@@ -116,6 +95,7 @@ header {
 
 .logo {
   font-family: "Yadon Bold";
+  font-weight: 500;
   font-size: 1.4rem;
   margin-bottom: 3rem;
   letter-spacing: 2px;
@@ -134,6 +114,7 @@ nav ul {
 
 nav ul li a {
   font-family: "Yadon Bold";
+  font-weight: 500;
   font-size: 1.2rem;
   line-height: 1.5;
   letter-spacing: 3px;
