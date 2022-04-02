@@ -10,6 +10,11 @@
   unicode-range: U+000-5FF;
 }
 
+html {
+  scroll-behavior: smooth;
+  will-change: scroll-position;
+}
+
 :root {
   --text-black: #1b1c1e;
   --text-light: rgba(48, 48, 48, 0.7);
