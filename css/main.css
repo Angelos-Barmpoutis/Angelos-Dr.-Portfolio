@@ -10,10 +10,10 @@
   unicode-range: U+000-5FF;
 }
 
-html {
+/* html {
   scroll-behavior: smooth;
   will-change: scroll-position;
-}
+} */
 
 :root {
   --text-black: #1b1c1e;
@@ -43,6 +43,7 @@ header a i {
   text-decoration: none;
   letter-spacing: 1px;
   transition: all 200ms ease-in-out;
+  -webkit-tap-highlight-color: transparent;
 }
 
 p {
@@ -155,7 +156,7 @@ header .footer p {
   width: 100%;
   height: auto;
   overflow: hidden;
-  transition: all 500ms ease-in-out;
+  transition: all 500ms linear;
 }
 
 #images .zoom-on-hover {
@@ -163,7 +164,7 @@ header .footer p {
 }
 
 #images .zoom-on-hover:hover img {
-  transform: scale(1.1);
+  transform: scale(1.15);
 }
 
 /* ANIMATIONS */
@@ -255,10 +256,6 @@ header .footer p {
     gap: 0.5rem;
   }
 
-  #images img {
-    border-radius: 3px;
-  }
-
   #images .zoom-on-hover:hover img {
     transform: scale(1);
   }
@@ -282,15 +279,11 @@ header .footer p {
   main #images {
     padding: 1.5rem 0;
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
-  }
-
-  main #images img {
-    border-radius: 3px;
+    gap: 1rem;
   }
 
   main #images .zoom-on-hover:hover img {
-    transform: scale(1);
+    transform: none;
   }
 
   .subtitle {
@@ -309,7 +302,8 @@ header .footer p {
   }
 
   .logo {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
+    line-height: 0.9;
     margin: 3rem auto 1.5rem;
     max-width: 10ch;
     text-align: center;
@@ -324,13 +318,14 @@ header .footer p {
     display: block;
     top: 1rem;
     z-index: 2;
+    text-align: center;
   }
 
   .bar1,
   .bar2,
   .bar3 {
-    width: 30px;
-    height: 1.5px;
+    width: 25px;
+    height: 1.1px;
     background-color: var(--text-white);
     margin-bottom: 8px;
     transition: all 0.2s ease-out;
@@ -341,8 +336,8 @@ header .footer p {
   }
 
   .change .bar1 {
-    -webkit-transform: rotate(-45deg) translate(-8px, 5px);
-    transform: rotate(-45deg) translate(-8px, 5px);
+    -webkit-transform: rotate(-45deg) translate(-7px, 5px);
+    transform: rotate(-45deg) translate(-7px, 5px);
   }
 
   .change .bar2 {
@@ -374,8 +369,8 @@ header .footer p {
   }
 
   header nav ul li a {
-    border-bottom: 1px solid var(--text-light);
-    padding: 1rem 0.5rem;
+    /* border-bottom: 1px solid var(--text-light); */
+    padding: 1.5rem 0.5rem;
     font-size: 1.4rem;
     width: 180px;
     text-align: center;
