@@ -10,10 +10,10 @@
   unicode-range: U+000-5FF;
 }
 
-/* html {
+html {
   scroll-behavior: smooth;
   will-change: scroll-position;
-} */
+}
 
 :root {
   --text-black: #1b1c1e;
@@ -44,10 +44,6 @@ header a i {
   letter-spacing: 1px;
   transition: all 200ms ease-in-out;
   -webkit-tap-highlight-color: transparent;
-  outline: none;
-}
-
-a:focus {
   outline: none;
 }
 
@@ -272,7 +268,8 @@ header .footer p {
   header .logo,
   .current,
   header nav ul li a:hover,
-  .current:hover {
+  .current:hover,
+  header a .fa-instagram:hover {
     color: var(--text-white);
   }
 
@@ -283,7 +280,7 @@ header .footer p {
   }
 
   main #images {
-    padding: 1.5rem 0;
+    padding:0 0 1.5rem;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
@@ -302,16 +299,17 @@ header .footer p {
 
   header {
     padding: 0;
-    height: auto;
-    position: static;
+    width: 100%;
+    height: 80px;
     transition: all 0.2s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.904);
   }
 
   .logo {
-    font-size: 1rem;
+    font-size: 0.9rem;
     line-height: 0.9;
-    margin: 3rem auto 1.5rem;
-    max-width: 10ch;
+    margin: auto;
+    max-width: 9ch;
     text-align: center;
   }
 
@@ -319,10 +317,10 @@ header .footer p {
     cursor: pointer;
     width: fit-content;
     padding: 5px;
-    position: absolute;
+    position: fixed;
     right: 1rem;
     display: block;
-    top: 1rem;
+    top: 1.5rem;
     z-index: 2;
     text-align: center;
   }
@@ -388,8 +386,17 @@ header .footer p {
   }
 
   header .instagram-QR,
-  header .footer,
-  header a:nth-child(3) {
+  header .footer {
+    display: none;
+  }
+
+  header a .fa-instagram {
+    color: var(--text-white);
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 1.15rem;
+    padding: 5px;
     display: none;
   }
 }

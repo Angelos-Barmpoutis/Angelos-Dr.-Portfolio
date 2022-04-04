@@ -18,6 +18,7 @@
 
 const hamburger = document.querySelector('.hamburger');
 const menu = document.querySelector('ul');
+const instagramIcon = document.querySelector('.fa-instagram');
 
 hamburger.addEventListener('click', hamburgerToggle);
 
@@ -27,11 +28,12 @@ function hamburgerToggle() {
   menu.classList.toggle('visible');
 
   if (menu.classList.contains('visible')) {
-    hamburger.style.position = "fixed";
-    document.querySelector('body').style.overflowY = 'hidden'
+    document.querySelector('body').style.overflowY = 'hidden';
+    instagramIcon.style.display = 'block';
   } else
-   {hamburger.style.position = "absolute";
-   document.querySelector('body').style.overflowY = 'scroll'
+   {
+   document.querySelector('body').style.overflowY = 'scroll';
+   instagramIcon.style.display = 'none';
   }
 }
 
