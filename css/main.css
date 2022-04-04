@@ -264,13 +264,18 @@ header .footer p {
 }
 
 @media (max-width: 600px) {
-  header nav ul li a,
   header .logo,
   .current,
-  header nav ul li a:hover,
   .current:hover,
   header a .fa-instagram:hover {
     color: var(--text-white);
+  }
+
+  header nav ul li a,
+  header nav ul li a:hover,
+  header a .fa-instagram,
+  header a .fa-instagram:hover {
+    color: var(--text-gray);
   }
 
   .container {
@@ -391,7 +396,6 @@ header .footer p {
   }
 
   header a .fa-instagram {
-    color: var(--text-white);
     position: absolute;
     z-index: 2;
     left: 0;
