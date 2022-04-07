@@ -301,7 +301,6 @@ header .footer p {
     margin: auto;
     max-width: 100px;
     text-align: center;
-    text-shadow: 0 0 15px rgba(220, 220, 220, 0.81);
   }
 
   .hamburger {
@@ -371,7 +370,7 @@ header .footer p {
   }
 
   .current {
-    text-shadow: 0 0 15px rgba(220, 220, 220, 0.81);
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.45);
   }
 
   .visible {
