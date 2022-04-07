@@ -22,7 +22,7 @@ html {
 
   --text-white: #fff;
   --text-gray: rgba(196, 196, 196, 0.7);
-  --bg-black: #181818;
+  --bg-black: rgb(18, 18, 18);
 }
 
 * {
@@ -316,7 +316,7 @@ main #about .card .card-content .btn {
   }
 
   main #images {
-    padding:0 2rem 1.5rem;
+    padding: 0 0 1.5rem;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
@@ -334,14 +334,14 @@ main #about .card .card-content .btn {
     width: 100%;
     height: 80px;
     transition: all 0.2s ease-in-out;
-    background-color: rgba(24, 24, 24, 0.902);
+    background-color: rgba(18, 18, 18, 0.902);
   }
 
   .logo {
     font-size: 0.9rem;
     line-height: 0.9;
     margin: auto;
-    max-width: 9ch;
+    max-width: 100px;
     text-align: center;
   }
 
@@ -351,9 +351,10 @@ main #about .card .card-content .btn {
     position: fixed;
     right: 1rem;
     display: block;
-    top: 1.5rem;
+    top: 1.8rem;
     z-index: 2;
     text-align: center;
+    -webkit-tap-highlight-color: transparent;
   }
 
   .bar1,
@@ -392,7 +393,7 @@ main #about .card .card-content .btn {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgba(24, 24, 24, 0.952);
+    background-color: rgba(7, 7, 7, 0.952);
     height: 100vh;
     width: 100%;
     z-index: 1;
