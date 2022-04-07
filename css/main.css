@@ -387,8 +387,7 @@ header .footer p {
     position: absolute;
     z-index: 2;
     left: 0;
-    top: 1.15rem;
-    padding: 5px;
+    top: 0.9rem;
     display: none;
   }
 }
