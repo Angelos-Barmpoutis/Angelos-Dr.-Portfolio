@@ -36,6 +36,7 @@ body {
   line-height: 1.4;
   background: var(--bg-white);
   user-select: none;
+  overflow-x: hidden;
 }
 
 a,
@@ -159,49 +160,6 @@ header .footer p {
   transform: scale(1.15);
 } */
 
-/* ABOUT */
-main #about {
-  display: flex;
-  align-items: center;
-  height: 100vh;
-}
-
-main #about .card {
-  background-color: rgba(35, 35, 35, 0.781);
-  padding: 2rem;
-}
-
-main #about .card .card-content {
-  border: 3px solid aliceblue;
-  color: aliceblue;
-  padding: 1.5rem 3rem;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-main #about .card .card-content p {
-  max-width: 45ch;
-  line-height: 1.5;
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-}
-
-main #about .card .card-content h2 {
-  font-size: 2.5rem;
-  letter-spacing: 1px;
-  margin-bottom: 2rem;
-}
-
-main #about .card .card-content .btn {
-  color: aliceblue;
-  font-size: 1.2rem;
-  border: 1px solid aliceblue;
-  padding: 0.75rem 1rem;
-  margin-top: 2rem;
-}
 
 /* ANIMATIONS */
 
@@ -238,7 +196,7 @@ main #about .card .card-content .btn {
   }
 }
 
-/* @media (min-width: 769px) {
+@media (min-width: 769px) { 
   .logo {
     transform: translateX(-200px);
     opacity: 0;
@@ -278,7 +236,7 @@ main #about .card .card-content .btn {
     -moz-animation: slideInFromRight 500ms ease-in-out 2s forwards;
     -webkit-animation: slideInFromRight 500ms ease-in-out 2s forwards;
   }
-} */
+}
 
 @media (max-width: 768px) {
   .container {
@@ -316,7 +274,7 @@ main #about .card .card-content .btn {
   }
 
   main #images {
-    padding: 0 0 1.5rem;
+    padding: 1.5rem 0;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
@@ -332,9 +290,9 @@ main #about .card .card-content .btn {
   header {
     padding: 0;
     width: 100%;
-    height: 80px;
+    height: 60px;
     transition: all 0.2s ease-in-out;
-    background-color: rgba(18, 18, 18, 0.902);
+    background-color: rgba(18, 18, 18, 0.962);
   }
 
   .logo {
@@ -351,7 +309,7 @@ main #about .card .card-content .btn {
     position: fixed;
     right: 1rem;
     display: block;
-    top: 1.8rem;
+    top: 1.2rem;
     z-index: 2;
     text-align: center;
     -webkit-tap-highlight-color: transparent;
@@ -405,7 +363,6 @@ main #about .card .card-content .btn {
   }
 
   header nav ul li a {
-    /* border-bottom: 1px solid var(--text-light); */
     padding: 1.5rem 0.5rem;
     font-size: 1.4rem;
     width: 180px;
