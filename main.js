@@ -17,9 +17,25 @@
 //   window.addEventListener("scroll", reveal);
 
 const hamburger = document.querySelector('.hamburger');
+const menu = document.querySelector('ul');
+const instagramIcon = document.querySelector('.fa-instagram');
+
 hamburger.addEventListener('click', hamburgerToggle);
+
 
 function hamburgerToggle() {
   hamburger.classList.toggle("change");
+  menu.classList.toggle('visible');
+
+  if (menu.classList.contains('visible')) {
+    document.querySelector('body').style.overflowY = 'hidden';
+    instagramIcon.style.display = 'block';
+  } else
+   {
+   document.querySelector('body').style.overflowY = 'scroll';
+   instagramIcon.style.display = 'none';
+  }
 }
+
+
   

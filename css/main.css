@@ -3,31 +3,16 @@
 @font-face {
   font-family: "Yadon Bold";
   src: url("../css/fonts/Yadon-Bold.woff2") format("woff2"),
-    url("../css/fonts/Yadon-Bold.woff") format("woff"),
-    url("../css/fonts/Yadon-Bold.otf") format("opentype");
+    url("../css/fonts/Yadon-Bold.woff") format("woff");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
+  unicode-range: U+000-5FF;
 }
 
-@font-face {
-  font-family: "Yadon Black";
-  src: url("../css/fonts/Yadon-Black.woff2") format("woff2"),
-    url("../css/fonts/Yadon-Black.woff") format("woff"),
-    url("../css/fonts/Yadon-Black.otf") format("opentype");
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Yadon Medium";
-  src: url("../css/fonts/Yadon-Medium.woff2") format("woff2"),
-    url("../css/fonts/Yadon-Medium.woff") format("woff"),
-    url("../css/fonts/Yadon-Medium.otf") format("opentype");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
+html {
+  scroll-behavior: smooth;
+  will-change: scroll-position;
 }
 
 :root {
@@ -37,7 +22,7 @@
 
   --text-white: #fff;
   --text-gray: rgba(196, 196, 196, 0.7);
-  --bg-black: #000;
+  --bg-black: rgb(18, 18, 18);
 }
 
 * {
@@ -50,21 +35,20 @@ body {
   word-spacing: 1px;
   line-height: 1.4;
   background: var(--bg-white);
+  user-select: none;
+  overflow-x: hidden;
 }
 
 a,
 header a i {
-  font-family: "Roboto", sans-serif;
-  color: var(--text-light);
   display: inline-block;
-
   text-decoration: none;
   letter-spacing: 1px;
   transition: all 200ms ease-in-out;
+  -webkit-tap-highlight-color: transparent;
 }
 
 p {
-  color: var(--text-light);
   font-family: "Lato", sans-serif;
   letter-spacing: 0.6px;
   font-weight: 400;
@@ -80,19 +64,26 @@ p {
   justify-content: center;
 }
 
-.current {
-  color: var(--text-black);
-}
-
 .subtitle {
-  font-family: "Yadon Bold";
-  color: var(--text-black);
+  font-family: "Yadon Bold", serif;
+  font-weight: 500;
   font-size: 2.3rem;
   letter-spacing: 1px;
   margin-bottom: 0.2rem;
 }
 
 /* STYLING */
+header .logo,
+.current {
+  color: var(--text-black);
+}
+
+header nav ul li a,
+header a .fa-instagram,
+header .footer p {
+  color: var(--text-light);
+}
+
 header {
   display: flex;
   flex-direction: column;
@@ -106,8 +97,8 @@ header {
 }
 
 .logo {
-  font-family: "Yadon Bold";
-  color: var(--text-black);
+  font-family: "Yadon Bold", serif;
+  font-weight: 500;
   font-size: 1.4rem;
   margin-bottom: 3rem;
   letter-spacing: 2px;
@@ -116,45 +107,7 @@ header {
 }
 
 header a {
-  width: fit-content;
   margin-left: auto;
-}
-
-.hamburger {
-  cursor: pointer;
-  width: fit-content;
-  padding: 5px;
-  position: absolute;
-  right: 1rem;
-  display: none;
-}
-
-.bar1,
-.bar2,
-.bar3 {
-  width: 30px;
-  height: 1.5px;
-  background-color: var(--text-white);
-  margin-bottom: 8px;
-  transition: all 0.4s ease-out;
-}
-
-.bar3 {
-  margin: 0;
-}
-
-.change .bar1 {
-  -webkit-transform: rotate(-45deg) translate(-8px, 5px);
-  transform: rotate(-45deg) translate(-8px, 5px);
-}
-
-.change .bar2 {
-  opacity: 0;
-}
-
-.change .bar3 {
-  -webkit-transform: rotate(45deg) translate(-8px, -6px);
-  transform: rotate(45deg) translate(-8px, -6px);
 }
 
 nav ul {
@@ -163,15 +116,11 @@ nav ul {
 }
 
 nav ul li a {
-  font-family: "Yadon Bold";
+  font-family: "Yadon Bold", serif;
+  font-weight: 500;
   font-size: 1.2rem;
   line-height: 1.5;
   letter-spacing: 3px;
-}
-
-header a:hover,
-header a .fa-instagram:hover {
-  color: var(--text-black);
 }
 
 header .instagram-QR {
@@ -180,10 +129,6 @@ header .instagram-QR {
   margin-left: auto;
   visibility: hidden;
   transition: all 200ms ease-in-out;
-}
-
-header a .fa-instagram:hover + .instagram-QR {
-  visibility: visible;
 }
 
 header .footer p {
@@ -204,45 +149,17 @@ header .footer p {
   width: 100%;
   height: auto;
   overflow: hidden;
-  transition: all 500ms ease-in-out;
+  transition: all 500ms linear;
 }
 
-#images .zoom-on-hover {
+/* #images .zoom-on-hover {
   overflow: hidden;
 }
 
 #images .zoom-on-hover:hover img {
-  transform: scale(1.1);
-}
+  transform: scale(1.15);
+} */
 
-/* ABOUT */
-
-main #about {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-main #about .card {
-  padding: 2rem;
-  width: 100%;
-  margin: auto;
-  box-shadow: 0 0 10px rgb(73, 73, 73);
-}
-
-main #about .card img {
-  width: 300px;
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-main #about .about-content {
-  max-width: 700px;
-  margin: 0 auto;
-  text-align: center;
-}
 
 /* ANIMATIONS */
 
@@ -261,8 +178,25 @@ main #about .about-content {
 }
 
 /* MEDIA QUERIES */
+@media (hover: hover) and (pointer: fine) {
+  header nav ul li a:hover,
+  header a .fa-instagram:hover {
+  color: var(--text-black);
+  }
 
-/* @media (min-width: 769px) {
+  header a .fa-instagram:hover + .instagram-QR {
+    visibility: visible;
+  }
+}
+ 
+@media (hover: hover) and (pointer: fine) and (max-width: 600px) {
+  header a .fa-instagram:hover,
+  header nav ul li a:hover {
+    color: var(--text-white);
+  }
+}
+
+@media (min-width: 769px) { 
   .logo {
     transform: translateX(-200px);
     opacity: 0;
@@ -302,25 +236,12 @@ main #about .about-content {
     -moz-animation: slideInFromRight 500ms ease-in-out 2s forwards;
     -webkit-animation: slideInFromRight 500ms ease-in-out 2s forwards;
   }
-} */
+}
 
 @media (max-width: 768px) {
   .container {
     grid-template-columns: 1fr 2.5fr;
     padding: 0 2rem;
-  }
-
-  header .instagram-QR,
-  header a .fa-instagram:hover + .instagram-QR {
-    visibility: hidden;
-  }
-
-  header a .fa-instagram:hover {
-    color: var(--text-light);
-  }
-
-  header a:hover:not(.current):not(.logo) {
-    color: var(--text-light);
   }
 
   header .footer p {
@@ -331,17 +252,21 @@ main #about .about-content {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.5rem;
   }
-
-  #images img {
-    border-radius: 3px;
-  }
-
-  #images .zoom-on-hover:hover img {
-    transform: scale(1);
-  }
 }
 
 @media (max-width: 600px) {
+  header .logo,
+  .current,
+  header nav ul li a:active,
+  header a .fa-instagram:active {
+    color: var(--text-white);
+  }
+
+  header nav ul li a,
+  header a .fa-instagram {
+    color: var(--text-gray);
+  }
+
   .container {
     grid-template-columns: 1fr;
     padding: 0 1rem;
@@ -349,17 +274,9 @@ main #about .about-content {
   }
 
   main #images {
-    padding: 1.5rem 0 5.5rem;
+    padding: 1.5rem 0;
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
-  }
-
-  main #images img {
-    border-radius: 3px;
-  }
-
-  main #images .zoom-on-hover:hover img {
-    transform: scale(1);
+    gap: 1rem;
   }
 
   .subtitle {
@@ -372,40 +289,106 @@ main #about .about-content {
 
   header {
     padding: 0;
-    height: auto;
-    position: static;
+    width: 100%;
+    height: 60px;
+    transition: all 0.2s ease-in-out;
+    background-color: rgba(18, 18, 18, 0.97);
   }
-
-  header ul li a,
-  header a:hover,
-  header ul li a:hover {
-    color: var(--text-white);
-  }
-
-  /* header a:hover:not(.current):not(.logo) {
-    color: var(--text-white);
-  } */
 
   .logo {
-    font-size: 1.3rem;
-    margin: 3rem auto 1.5rem;
-    max-width: 10ch;
+    font-size: 0.9rem;
+    line-height: 0.9;
+    margin: auto;
+    max-width: 100px;
     text-align: center;
-    color: var(--text-white);
-  }
-
-  nav ul {
-    display: none;
   }
 
   .hamburger {
+    cursor: pointer;
+    width: fit-content;
+    position: fixed;
+    right: 1rem;
     display: block;
-    top: 1rem;
+    top: 1.2rem;
+    z-index: 2;
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .bar1,
+  .bar2,
+  .bar3 {
+    width: 25px;
+    height: 1.1px;
+    background-color: var(--text-white);
+    margin-bottom: 8px;
+    transition: all 0.2s ease-out;
+  }
+
+  .bar3 {
+    margin: 0;
+  }
+
+  .change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-7px, 5px);
+    transform: rotate(-45deg) translate(-7px, 5px);
+  }
+
+  .change .bar2 {
+    opacity: 0;
+  }
+
+  .change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -6px);
+    transform: rotate(45deg) translate(-8px, -6px);
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(7, 7, 7, 0.902);
+    height: 100vh;
+    width: 100%;
+    z-index: 1;
+    overflow: hidden;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+    overflow: hidden;
+  }
+
+  header nav ul li a {
+    padding: 1.5rem 0.5rem;
+    font-size: 1.4rem;
+    width: 180px;
+    text-align: center;
+  }
+
+  .current {
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.45);
+  }
+
+  .visible {
+    transform: translateY(0);
+    opacity: 1;
   }
 
   header .instagram-QR,
-  header .footer,
-  header a:nth-child(3) {
+  header .footer {
+    display: none;
+  }
+
+  header a .fa-instagram {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 1.15rem;
+    padding: 5px;
     display: none;
   }
 }
