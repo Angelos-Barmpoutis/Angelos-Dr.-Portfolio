@@ -22,7 +22,7 @@ html {
 
   --text-white: #fff;
   --text-gray: rgba(196, 196, 196, 0.7);
-  --bg-black: #000;
+  --bg-black: #181818;
 }
 
 * {
@@ -35,6 +35,7 @@ body {
   word-spacing: 1px;
   line-height: 1.4;
   background: var(--bg-white);
+  user-select: none;
 }
 
 a,
@@ -44,7 +45,6 @@ header a i {
   letter-spacing: 1px;
   transition: all 200ms ease-in-out;
   -webkit-tap-highlight-color: transparent;
-  outline: none;
 }
 
 p {
@@ -81,11 +81,6 @@ header nav ul li a,
 header a .fa-instagram,
 header .footer p {
   color: var(--text-light);
-}
-
-header nav ul li a:hover,
-header a .fa-instagram:hover {
-  color: var(--text-black);
 }
 
 header {
@@ -135,10 +130,6 @@ header .instagram-QR {
   transition: all 200ms ease-in-out;
 }
 
-header a .fa-instagram:hover + .instagram-QR {
-  visibility: visible;
-}
-
 header .footer p {
   font-size: 12px;
   line-height: 1.2;
@@ -160,13 +151,56 @@ header .footer p {
   transition: all 500ms linear;
 }
 
-
-#images .zoom-on-hover {
+/* #images .zoom-on-hover {
   overflow: hidden;
 }
 
 #images .zoom-on-hover:hover img {
   transform: scale(1.15);
+} */
+
+/* ABOUT */
+main #about {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+main #about .card {
+  background-color: rgba(35, 35, 35, 0.781);
+  padding: 2rem;
+}
+
+main #about .card .card-content {
+  border: 3px solid aliceblue;
+  color: aliceblue;
+  padding: 1.5rem 3rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+main #about .card .card-content p {
+  max-width: 45ch;
+  line-height: 1.5;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+main #about .card .card-content h2 {
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+}
+
+main #about .card .card-content .btn {
+  color: aliceblue;
+  font-size: 1.2rem;
+  border: 1px solid aliceblue;
+  padding: 0.75rem 1rem;
+  margin-top: 2rem;
 }
 
 /* ANIMATIONS */
@@ -186,8 +220,25 @@ header .footer p {
 }
 
 /* MEDIA QUERIES */
+@media (hover: hover) and (pointer: fine) {
+  header nav ul li a:hover,
+  header a .fa-instagram:hover {
+  color: var(--text-black);
+  }
 
-@media (min-width: 769px) {
+  header a .fa-instagram:hover + .instagram-QR {
+    visibility: visible;
+  }
+}
+ 
+@media (hover: hover) and (pointer: fine) and (max-width: 600px) {
+  header a .fa-instagram:hover,
+  header nav ul li a:hover {
+    color: var(--text-white);
+  }
+}
+
+/* @media (min-width: 769px) {
   .logo {
     transform: translateX(-200px);
     opacity: 0;
@@ -227,26 +278,12 @@ header .footer p {
     -moz-animation: slideInFromRight 500ms ease-in-out 2s forwards;
     -webkit-animation: slideInFromRight 500ms ease-in-out 2s forwards;
   }
-}
+} */
 
 @media (max-width: 768px) {
-  header nav ul li a:hover,
-  header a .fa-instagram:hover {
-    color: var(--text-light);
-  }
-
-  .current:hover {
-    color: var(--text-black);
-  }
-
   .container {
     grid-template-columns: 1fr 2.5fr;
     padding: 0 2rem;
-  }
-
-  header .instagram-QR,
-  header a .fa-instagram:hover + .instagram-QR {
-    visibility: hidden;
   }
 
   header .footer p {
@@ -257,24 +294,18 @@ header .footer p {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.5rem;
   }
-
-  #images .zoom-on-hover:hover img {
-    transform: scale(1);
-  }
 }
 
 @media (max-width: 600px) {
   header .logo,
   .current,
-  .current:hover,
-  header a .fa-instagram:hover {
+  header nav ul li a:active,
+  header a .fa-instagram:active {
     color: var(--text-white);
   }
 
   header nav ul li a,
-  header nav ul li a:hover,
-  header a .fa-instagram,
-  header a .fa-instagram:hover {
+  header a .fa-instagram {
     color: var(--text-gray);
   }
 
@@ -285,13 +316,9 @@ header .footer p {
   }
 
   main #images {
-    padding:0 0 1.5rem;
+    padding:0 2rem 1.5rem;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
-  }
-
-  main #images .zoom-on-hover:hover img {
-    transform: none;
   }
 
   .subtitle {
@@ -307,7 +334,7 @@ header .footer p {
     width: 100%;
     height: 80px;
     transition: all 0.2s ease-in-out;
-    background-color: rgba(0, 0, 0, 0.904);
+    background-color: rgba(24, 24, 24, 0.902);
   }
 
   .logo {
@@ -321,7 +348,6 @@ header .footer p {
   .hamburger {
     cursor: pointer;
     width: fit-content;
-    padding: 5px;
     position: fixed;
     right: 1rem;
     display: block;
@@ -366,7 +392,7 @@ header .footer p {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.904);
+    background-color: rgba(24, 24, 24, 0.952);
     height: 100vh;
     width: 100%;
     z-index: 1;
